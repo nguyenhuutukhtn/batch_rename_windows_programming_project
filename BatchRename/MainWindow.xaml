@@ -6,10 +6,13 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:BatchRename"
         mc:Ignorable="d"
-        Title="MainWindow"
+        Title="Batch Rename Application"
         MinHeight="650"
         MinWidth="900"
-        d:DesignWidth="1077">
+        d:DesignWidth="1077"
+        FontSize="14"
+        FontFamily="Segoe UI"
+        Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25" />
@@ -46,18 +49,20 @@
                     </ComboBox.ItemTemplate>
                 </ComboBox>
                 <Button Name="methodMenuOpenButton"
-                        Margin="3"
+                        Background="Transparent "
+                        Margin="5,0,0,0"
                         BorderThickness="0">
-                    <Image Source="/Images/open-folder.png"
-                           Height="20"
-                           Width="20" />
+                    <Image Source="/Images/iconfinder_Folder - Default_32040.png"
+                           Height="30"
+                           Width="30" />
                 </Button>
                 <Button Name="methodMenuSaveButton"
-                        Margin="3"
+                        Margin="5,0,0,0"
+                        Background="Transparent "
                         BorderThickness="0">
-                    <Image Source="/Images/save.png"
-                           Height="20"
-                           Width="20" />
+                    <Image Source="/Images/iconfinder_Save_1493294.png"
+                           Height="30"
+                           Width="30" />
                 </Button>
             </WrapPanel>
             <Line X1="5"
@@ -142,7 +147,9 @@
                                   Margin="0,0,0,0">
                             <MenuItem.Header>
                                 <StackPanel Orientation="Horizontal">
-                                    <Image Height="25" Width="25" Source="/Images/add.png" />
+                                    <Image Height="25"
+                                           Width="25"
+                                           Source="/Images/add.png" />
                                     <!--<materialDesign:PopupBox x:Name="PopupBox_addRule"
                                                              Style="{StaticResource MaterialDesignMultiFloatingActionPopupBox}"
                                                              PlacementMode="TopAndAlignRightEdges"
@@ -183,7 +190,8 @@
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Images/icons8-remove-100.png"
                                    Height="25"
-                                   Width="25" Margin="0,3,0,0"/>
+                                   Width="25"
+                                   Margin="0,3,0,0" />
                             <Border BorderBrush="{x:Null}"
                                     Margin="5,0,0,0">
                                 <TextBlock TextWrapping="Wrap"
@@ -191,28 +199,28 @@
                                            FontSize="20"
                                            VerticalAlignment="Center" />
                             </Border>
-                          
+
                         </StackPanel>
                     </Button>
                     <Button Name="methodMenuTopButton">
-                        <Image Source="/Images/arrow-top.png"
-                               Height="20"
-                               Width="20" />
+                        <Image Source="/Images/ic_up_top.png"
+                               Height="30"
+                               Width="30" />
                     </Button>
                     <Button Name="methodMenuUpButton">
-                        <Image Source="/Images/arrow-up.png"
+                        <Image Source="/Images/ic_up.png"
                                Height="20"
                                Width="20" />
                     </Button>
                     <Button Name="methodMenuDownButton">
-                        <Image Source="/Images/arrow-down.png"
+                        <Image Source="/Images/ic_down.png"
                                Height="20"
                                Width="20" />
                     </Button>
                     <Button Name="methodMenuBotButton">
-                        <Image Source="/Images/arrow-bot.png"
-                               Height="20"
-                               Width="20" />
+                        <Image Source="/Images/ic_down_bottom.png"
+                               Height="30"
+                               Width="30" />
                     </Button>
 
                 </ToolBar>
@@ -323,31 +331,32 @@
                         <ToolBar Margin="0,0,0,0">
                             <Button Name="fileAddButton">
                                 <StackPanel Orientation="Horizontal">
-                                    <Image Width="25"
-                                           Height="25"
+                                    <Image Width="20"
+                                           Height="20"
                                            Source="/Images/add.png" />
                                     <TextBlock Text="Add"
                                                FontSize="20"
-                                               Margin="2,0,0,0" />
+                                               Margin="8,0,0,0" />
                                 </StackPanel>
                             </Button>
-                            <Button Name="fileMenuTopButton">
-                                <Image Source="/Images/arrow-top.png"
+                            <Button Name="fileMenuTopButton"
+                                    Margin="30,0,0,0">
+                                <Image Source="/Images/ic_up_top.png"
                                        Height="20"
                                        Width="20" />
                             </Button>
                             <Button Name="fileMenuUpButton">
-                                <Image Source="/Images/arrow-up.png"
-                                       Height="20"
-                                       Width="20" />
+                                <Image Source="/Images/ic_up.png"
+                                       Height="15"
+                                       Width="15" />
                             </Button>
                             <Button Name="fileMenuDownButton">
-                                <Image Source="/Images/arrow-down.png"
-                                       Height="20"
-                                       Width="20" />
+                                <Image Source="/Images/ic_down.png"
+                                       Height="15"
+                                       Width="15" />
                             </Button>
                             <Button Name="fileMenuBotButton">
-                                <Image Source="/Images/arrow-bot.png"
+                                <Image Source="/Images/ic_down_bottom.png"
                                        Height="20"
                                        Width="20" />
                             </Button>
@@ -367,16 +376,16 @@
                                   Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}">
                             <ListView.View>
                                 <GridView>
-                                    <GridViewColumn Header="File name"
-                                                    Width="75">
+                                    <GridViewColumn Header="Current name"
+                                                    Width="250">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
                                                 <TextBlock Text="{Binding Name}" />
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>
-                                    <GridViewColumn Header="New file name"
-                                                    Width="80">
+                                    <GridViewColumn Header="New name"
+                                                    Width="250">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
                                                 <TextBlock Text="{Binding NewName}" />
@@ -384,22 +393,23 @@
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>
                                     <GridViewColumn Header="Extension"
-                                                    Width="60">
+                                                    Width="80">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
                                                 <TextBlock Text="{Binding Extension}" />
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>
-                                    <GridViewColumn Header="Folder Content"
+                                    <!--<GridViewColumn Header="Folder Content"
                                                     Width="300">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
                                                 <TextBlock Text="{Binding UpperPath}" />
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
-                                    </GridViewColumn>
-                                    <GridViewColumn Header="Error">
+                                    </GridViewColumn>-->
+                                    <GridViewColumn Header="Error"
+                                                    Width="50">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
                                                 <TextBlock Text="{Binding Error}" />
@@ -430,26 +440,27 @@
                                            Source="/Images/add.png" />
                                     <TextBlock Text="Add"
                                                FontSize="20"
-                                               Margin="2,0,0,0" />
+                                               Margin="8,0,0,0" />
                                 </StackPanel>
                             </Button>
-                            <Button Name="folderMenuTopButton">
-                                <Image Source="/Images/arrow-top.png"
+                            <Button Name="folderMenuTopButton"
+                                    Margin="30,0,0,0">
+                                <Image Source="/Images/ic_up_top.png"
                                        Height="20"
                                        Width="20" />
                             </Button>
                             <Button Name="folderMenuUpButton">
-                                <Image Source="/Images/arrow-up.png"
-                                       Height="20"
-                                       Width="20" />
+                                <Image Source="/Images/ic_up.png"
+                                       Height="15"
+                                       Width="15" />
                             </Button>
                             <Button Name="folderMenuDownButton">
-                                <Image Source="/Images/arrow-down.png"
-                                       Height="20"
-                                       Width="20" />
+                                <Image Source="/Images/ic_down.png"
+                                       Height="15"
+                                       Width="15" />
                             </Button>
                             <Button Name="folderMenuBotButton">
-                                <Image Source="/Images/arrow-bot.png"
+                                <Image Source="/Images/ic_down_bottom.png"
                                        Height="20"
                                        Width="20" />
                             </Button>
@@ -469,16 +480,16 @@
                                   Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}">
                             <ListView.View>
                                 <GridView ScrollViewer.HorizontalScrollBarVisibility="Visible">
-                                    <GridViewColumn Header="Folder name"
-                                                    Width="75">
+                                    <GridViewColumn Header="Current name"
+                                                    Width="250">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
                                                 <TextBlock Text="{Binding Name}" />
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>
-                                    <GridViewColumn Header="New Folder name"
-                                                    Width="100">
+                                    <GridViewColumn Header="New name"
+                                                    Width="250">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
                                                 <TextBlock Text="{Binding NewName}" />
@@ -486,15 +497,16 @@
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>
 
-                                    <GridViewColumn Header="Folder Content"
+                                    <!--<GridViewColumn Header="Folder Content"
                                                     Width="300">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
                                                 <TextBlock Text="{Binding UpperPath}" />
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
-                                    </GridViewColumn>
-                                    <GridViewColumn Header="Error">
+                                    </GridViewColumn>-->
+                                    <GridViewColumn Header="Error"
+                                                    Width="50">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
                                                 <TextBlock Text="{Binding Error}" />

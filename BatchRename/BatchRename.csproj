@@ -143,5 +143,23 @@
   <ItemGroup>
     <Resource Include="Images\iconfinder_preview_46825.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_up_top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_down_bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\iconfinder_Folder - Default_32040.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\iconfinder_Save_1493294.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
