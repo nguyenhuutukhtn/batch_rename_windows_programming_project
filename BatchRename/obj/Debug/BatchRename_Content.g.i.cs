@@ -8,15 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/add.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/arrow-bot.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/arrow-down.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/arrow-top.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/arrow-up.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/clear.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/delete.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/open-folder.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/press-play-button.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/save.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/iconfinder_preview_46825.png")]
 
 
